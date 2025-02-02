@@ -1,0 +1,112 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+
+    --work-sans-font-family: 'Work Sans', sans-serif;
+
+    font-family: var(--work-sans-font-family);
+    background: var(--light-pink);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.background-image {
+    width: 100%;
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+}
+
+.faq-container {
+    margin: 0 2rem;
+    position: relative;
+    top: -6rem;
+    background-color: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+}
+
+.heading-faq {
+    margin-block-end: 0.5rem;
+}
+
+.heading-faq::before {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(./assets/images/icon-star.svg);
+    margin-inline-end: 1.5rem;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    gap: 1rem;
+}
+
+.header-label {
+    max-width: 80%;
+    font-size: 14px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+    padding-block: 1.5rem;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.8rem;
+    transition: max-height 0.3s ease;
+}
+
+input[type="checkbox"]:checked~.accordion-content {
+    max-height: 6rem;
+    padding-block-start: 1rem;
+}
+
+.icon-plus-minus {
+    width: 2rem;
+    height: 2rem;
+    background-image: url(./assets/images/icon-plus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.accordion-header:has(~input[type="checkbox"]:checked) .icon-plus-minus {
+    background-image: url(./assets/images/icon-minus.svg);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
