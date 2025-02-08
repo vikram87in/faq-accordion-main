@@ -18,20 +18,30 @@
     box-sizing: border-box;
 }
 
-
+body {
+    min-width: 12rem;
+}
 
 .background-image {
     width: 100%;
-    background-image: url(./assets/images/background-pattern-mobile.svg);
+    object-fit: cover;
+    max-height: 12rem;
+}
+
+@media screen and (width > 425px) {
+    .background-image {
+        height: 12rem;
+    }
 }
 
 .faq-container {
-    margin: 0 2rem;
+    margin: 0 auto;
     position: relative;
     top: -6rem;
     background-color: var(--white);
     padding: 2.5rem 2rem;
     border-radius: 10px;
+    max-width: min(30rem, 80%);
 }
 
 .heading-faq {
@@ -104,8 +114,12 @@ input[type="checkbox"]:checked~.accordion-content {
 .attribution {
     font-size: 11px;
     text-align: center;
-    margin-bottom: 1rem;
+    position: relative;
+    bottom: 1rem;
+    width: 100%;
 }
+
+
 
 .attribution a {
     color: hsl(228, 45%, 44%);
