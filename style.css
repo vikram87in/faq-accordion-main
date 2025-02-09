@@ -28,7 +28,7 @@ body {
     max-height: 12rem;
 }
 
-@media screen and (width > 425px) {
+@media screen and (width > 26.57rem) {
     .background-image {
         height: 12rem;
     }
@@ -115,12 +115,17 @@ input[type="checkbox"]:checked~.accordion-content {
     font-size: 11px;
     text-align: center;
     position: relative;
-    bottom: 1rem;
     width: 100%;
+    margin-bottom: 1rem;
+    margin-top: -3rem;
 }
-
-
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (width > 48rem) {
+    .attribution {
+        margin-top: 2rem;
+    }
 }
